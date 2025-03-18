@@ -18,5 +18,7 @@ namespace Atividade11_03.Infraestrutura.Repositorios.Interfaces
         Pizza? GetPizzaById(int id);
 
         List<Pizza> GetPizzas();
+
+        List<Pizza> GetPizzaByNome(string nome);
     }
 }

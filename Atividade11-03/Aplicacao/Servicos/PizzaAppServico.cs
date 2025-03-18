@@ -28,21 +28,27 @@ namespace Atividade11_03.Aplicacao.Servicos
             _pizzaRepositorio.Salvar(pizza);
         }
 
-        public void DeletarPizza(Pizza pizza)
+        public void DeletarPizza(int id)
         {
-            var pizzaExistente = _pizzaRepositorio.GetPizzaById(pizza.Id);
+            var pizzaExistente = _pizzaRepositorio.GetPizzaById(id);
 
-            if(pizzaExistente == null)
+            if (pizzaExistente == null)
             {
-                throw new Exception("Pizza não Encontrada no Banco de Dados");
+                throw new Exception("Pizza não encontrada no Banco de Dados");
             }
 
-            _pizzaRepositorio.Deletar(pizza);
+            _pizzaRepositorio.Deletar(pizzaExistente); 
         }
+
 
         public List<Pizza> GetPizzas()
         {
             return _pizzaRepositorio.GetPizzas();
+        }
+
+        public List<Pizza> GetPizzasPorNome(string nome)
+        {
+            return _pizzaRepositorio.GetPizzaByNome(nome);
         }
 
         public void AlterarPizzas(int id, string nome,  decimal preco)

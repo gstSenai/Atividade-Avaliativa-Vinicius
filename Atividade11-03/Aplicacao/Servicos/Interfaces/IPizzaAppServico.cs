@@ -11,7 +11,8 @@ namespace Atividade11_03.Aplicacao.Servicos.Interfaces
     {
         void CadastrarPizza(string nome, decimal preco);
         void AlterarPizzas(int id, string nome, decimal preco);
-        void DeletarPizza(Pizza pizza);
+        void DeletarPizza(int id);
         List<Pizza> GetPizzas();
+        List<Pizza> GetPizzasPorNome(string nome);
     }
 }

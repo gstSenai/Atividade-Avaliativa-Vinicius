@@ -52,5 +52,13 @@ namespace Atividade11_03.Infraestrutura.Repositorios
         {
             return _context.Pizzas.ToList();
         }
+
+        public List<Pizza> GetPizzaByNome(string nome)
+        {
+            return _context.Pizzas
+                .Where(p => p.Nome.Contains(nome))
+                .ToList(); 
+        }
+
     }
 }
